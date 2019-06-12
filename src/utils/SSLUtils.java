@@ -11,7 +11,7 @@
  * 
  */
 
-package demo.utils;
+package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -24,7 +24,6 @@ import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.util.Base64;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;

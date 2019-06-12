@@ -11,9 +11,9 @@
  * 
  */
 
-package demo.client;
+package client;
 
-import static demo.utils.SSLUtils.*;
+import static utils.SSLUtils.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,8 +24,8 @@ import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.TrustManager;
 
-import demo.utils.SSLContextProvider;
-import demo.utils.SSLUtils;
+import utils.SSLContextProvider;
+import utils.SSLUtils;
 
 public class SSLClient implements SSLContextProvider {
 	
