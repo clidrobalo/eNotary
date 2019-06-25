@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class XMLCode {
 	
-	public static HashMap<String,Integer> fileToMap(String fileName) {
+	public static HashMap<String,Integer> fileToMapString_Integer(String fileName) {
 		HashMap<String,Integer > t = null;
 		try{
 			XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(
@@ -21,25 +21,12 @@ public class XMLCode {
 
 		}
 		catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
 		}
 		return t;
-	} 
-
-	public static boolean mapToFile(String fileName, HashMap<String, Integer> t){
-		try{
-			XMLEncoder encoder = new XMLEncoder( new BufferedOutputStream(
-					new FileOutputStream(fileName)));
-			encoder.writeObject(t);
-			encoder.close();
-		}
-		catch(Exception e){
-			return false;
-		}
-		return true;
 	}
 
-	public static HashMap<String,String> fileToMap2(String fileName) {
+	public static HashMap<String,String> fileToMapString_String(String fileName) {
 		HashMap<String,String > t = null;
 		try{
 			XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(
@@ -49,12 +36,27 @@ public class XMLCode {
 
 		}
 		catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
 		}
 		return t;
 	}
 
-	public static boolean mapToFile2(String fileName, HashMap<String, String> t){
+	public static HashMap<String,Boolean> fileToMapString_Boolean(String fileName) {
+		HashMap<String,Boolean > t = null;
+		try{
+			XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(
+					new FileInputStream(fileName)));
+			t = (HashMap<String, Boolean>)decoder.readObject();
+			decoder.close();
+
+		}
+		catch(Exception e){
+			//System.out.println(e);
+		}
+		return t;
+	}
+
+	public static boolean mapToFileString_Integer(String fileName, HashMap<String, Integer> t){
 		try{
 			XMLEncoder encoder = new XMLEncoder( new BufferedOutputStream(
 					new FileOutputStream(fileName)));
@@ -67,4 +69,29 @@ public class XMLCode {
 		return true;
 	}
 
+	public static boolean mapToFileString_String(String fileName, HashMap<String, String> t){
+		try{
+			XMLEncoder encoder = new XMLEncoder( new BufferedOutputStream(
+					new FileOutputStream(fileName)));
+			encoder.writeObject(t);
+			encoder.close();
+		}
+		catch(Exception e){
+			return false;
+		}
+		return true;
+	}
+
+	public static boolean mapToFileString_Boolean(String fileName, HashMap<String, Boolean> t){
+		try{
+			XMLEncoder encoder = new XMLEncoder( new BufferedOutputStream(
+					new FileOutputStream(fileName)));
+			encoder.writeObject(t);
+			encoder.close();
+		}
+		catch(Exception e){
+			return false;
+		}
+		return true;
+	}
 }

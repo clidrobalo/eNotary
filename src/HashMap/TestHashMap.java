@@ -74,7 +74,7 @@ public class TestHashMap {
 
 		if (fileVerify(file)){//verify file
 			table.clear();
-			table = XMLCode.fileToMap(file);
+			table = XMLCode.fileToMapString_Integer(file);
 		}	
 		else{
 			System.err.println ("error reading file "+file);
@@ -169,11 +169,11 @@ public class TestHashMap {
 				break;				
 			case 11:	
 				table.clear();
-				table = XMLCode.fileToMap(file);
+				table = XMLCode.fileToMapString_Integer(file);
 				System.out.println("table created from "+file);			
 				break;
 			case 12:
-				if(XMLCode.mapToFile(file,table))
+				if(XMLCode.mapToFileString_Integer(file,table))
 					System.out.println("table copied to "+file);
 				else
 					System.out.println("ERROR: copy table to "+file );	
