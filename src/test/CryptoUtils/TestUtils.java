@@ -82,8 +82,8 @@ public class TestUtils {
 		System.out.println(decipheredMessage);
 
 		// Encrypt/decrypt a file using RSA
-		CryptoUtils.doEncrypt(pair.getPrivate(), data1Txt);
-		CryptoUtils.doDecrypt(pair.getPublic(), data1Txt+".enc");
+		CryptoUtils.doEncrypt(pair.getPrivate(), data2Txt);
+		CryptoUtils.doDecrypt(pair.getPublic(), data2Txt+".enc");
 
 		// Encrypt/decrypt a file using RSA with AES
 		CryptoUtils.doEncryptRSAWithAES(pair.getPrivate(), data2Txt);
